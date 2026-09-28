@@ -134,3 +134,21 @@ pip install -r requirements.txt
 Rồi mở [`CHECKPOINTS.md`](CHECKPOINTS.md) và làm lần lượt Checkpoint 1 → 5.
 
 Nộp theo [`SUBMISSION.md`](SUBMISSION.md) · Quy định: [`RULES.md`](RULES.md).
+
+---
+
+## Chạy demo UI
+
+Giao diện local chỉ **đọc** file trong `outputs/`. Không gọi model, không hỏi API key, không ghi đè artifact chấm điểm. Secret demo được che thành `[REDACTED]` trước khi hiện.
+
+Từ gốc repo, sau khi đã kích hoạt venv và `pip install -r requirements.txt`:
+
+```powershell
+streamlit run demo/app.py
+```
+
+```bash
+streamlit run demo/app.py
+```
+
+Nếu chưa có JSON, các tab vẫn mở và báo «Chưa có dữ liệu — hãy chạy checkpoint tương ứng». Sinh dữ liệu bằng `python src/main.py --part 3` (Blue) và `python src/main.py --part 4` (Red rồi Red Advance). Checkpoint 4 không tấn công Blue.
